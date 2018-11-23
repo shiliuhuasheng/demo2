@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="color" name="" id="color" value="" />
+		<span id="sp">			
+		</span>
+	</body>
+	<script type="text/javascript">
+		var colr=document.getElementById('color')
+		
+		var sp=document.getElementById('sp')
+		console.log(sp)
+		colr.onchange=function(){
+			sp.innerHTML=this.value
+		}
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		//简单的说 Node.js 就是运行在服务端的 JavaScript。
+		
+		//Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。
+
+//		Node.js是一个事件驱动I/O服务端JavaScript环境，
+//		基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。
+	
+		<!--dos命令大全-->
+//		d:  进入d盘
+//		cd 文件夹
+//		cd .. 返回上一层文件夹
+//		ipconfig 查看ip
+		cls   清除屏幕。
+		/delete 删除某个已计划的命令。如果省略 id，计算机上所有已计划的命令都会被删除。
+		ctrl+c      结束运行
+		npm install jquery -g   全局下载
+		查看当前npm全局安装路径位置的命令是：npm config get prefix
+		要删除通过npm安装的程序包，可以使用以下命令：npm uninstall <包名>  或 npm uninstall -g <包名>
+		需要知道哪些程序包需要更新，可以使用命令：npm outdated -g --depth=0
+		但实际上很多时候可以用以下命令来更新更为稳妥：npm install -g <包名>
+
+
+
+
+
+		
+//进入对应文件夹-->		node 文件名   运行文件
+
+		1.  cmd进入管理
+		2. cd /d 切换 对应路径
+		也可以按住shift键  按右键打开命令窗口
+		
+		
+		运行   node +  文件名
+		
+		
+		global是全局对象  类似于window对象
+		global.process对象   
+		console.log(global.process.version)获得nodejs的版本 
+		
+		<!--export{hd}变量导出
+		import{hd} form'./02.js'  导入-->
+		
+		module.exports.hd='momo是的广东省公司多个地市';
+		exports.foo=foo;           导出模块
+		
+		let b=require('./01.js')    导入模块
+		let b=require('./01')    导入模块
+		//console.log(__dirname) 获得文件夹路径
+		//console.log(__filename)  获得当前文件的磁盘绝对路径
+		
+		let fs = require('fs')   引入fs模块
+		./当前路径../上级文件
+		fs.readFile('./a.txt',(err,data)=>{// 读取文件
+		if(err){
+			console.log('出错了',err)
+		}else{
+			toString()//可以将2进制数据转成字符串
+			console.log(data.toString())
+		}
+		})
+		fs.readFileSync()// 读取文件同步版本
+		
+		
+		let fs= require('fs')
+		fs.copyFile('./a.txt','./aa.txt',err=>{  //文件的拷贝
+			if(err){
+				console.log('出错',err)
+			}else{
+				console.log("成功")
+			}
+		})
+		
+		
+		fs.writeFile()//文件写入
+		fs.unlink() //删除文件
+		fs.unlink('./a.txt',err=>{   //文件删除
+		if(err){
+			console.log('错了')
+		}else{
+			console.log("成功")
+			}
+		})
+		fs.mkdir('./02.js')  //创建文件夹
+		fs.rmdir('./02.js')  //删除目录
+		fs.stat('./a.txt')  //获取文件相关信息
+		
+		fs.stat('./03.js',(err,info)=>{
+			console.log(info.isFile())   //返回当前文件是不是一个文件
+			console.log(info.isDirectory())//返回当前文件是不一个目录
+		})
+		
+		npm install npm -g
+		fs.readdir( "")   //读取文件夹中的文件列表
+		fs.rename(oldname,newname,err=>{    //更改文件名
+	
+	读取流文件（图片视频等）
+	var rs = fs.createReadStream('mn.jpg')
+	写入流文件
+	var ws = fs.createWriteStream('a.png')
+	//rs.on("data",function(chunk){
+	//	chunk---读取到的流文件
+	//	console.log(chunk)
+	//	ws.write(chunk)
+	//})
+	//
+	//
+	//rs.on("end",function(){
+	//	console.log("数据读取完毕")
+	//})
+	
+	先安装express    通过npm install express --save -g 安装
+	
+	var express=require('require')---框架
+	var app=express()
+	app.get()---接口方式
+	app.get('/login',function(req,res){
+		req---前端端传过来的数据
+		req.send('登录成功')--后端返回数据
+	})
+	app.listen(8080)
+	
+	安装express-generator 框架 安装百度一下
+	express 搭建服务，配置静态资源，编写路由模块
+	
+	let http=require('http');引入http模块
+	let server=http.createServer()初始化server服务
+	server.listen(3000,function(){console.log(server服务启动成功，端口3000)})
+	server.on('request',function(req,res){//监听用户的请求
+		req---前端端传过来的数据
+		req.send('登录成功')--后端返回数据
+		req.url() 获得用户请求的地址
+		res.write('收到请求')响应请求
+		res.end('也可以返回信息')
+	})
+	
+	 <!--path路径模块-->
+	//静态资源配置路径
+	var path = require('path');   
+	//express.static(路径)  配置静态资源路径
+	app.use(express.static(path.join(__dirname,"htmls")))
+	path.normalize('./aa')       规范路径
+	path.join('d:/www','index.jpj'.'sdf')  拼接成完整的路径
+	path.isAbsolute(url)   判断是否是绝对路径  返回true  false
+	path.resolve('d:/www','a','b/index.html')   组合路径成绝对路径再停   如果到第一个参数都没组合成绝对路径会自动连接上当前的脚本所在绝对路径组合成绝对路径
+	path.dirname(url)   获得路径中最后一段路径所在的文件夹（截取最后一段）
+	path.basename('')  获得路径中最后的一段路径
+	path.extname(url)   获得文件中最后的文件的后缀名
+	创建路由
+	var express=require("express")
+	var router=express.Router()
+	
+	node链接数据库
+	1.安装mongodb模块   npm i mongodb
+	
+	
+	</body>
+</html>

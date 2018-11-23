@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		1.mongod --dbpath 加地址指定路径                                开启mongod服务
+		2.mongo     链接数据库
+		3.show dbs   查看所有数据库
+		use admin   进入admin数据库
+		show collections     进入数据库后查询所有集合
+		db--正在使用的数据库
+		db.test.find()          查看所有所有数据
+		db.name.find({name:'zhang'})查看某条数据
+		db.test.drop()   删除数据
+		db.dropDatabase()   删除数据库
+		db.createCollection("name")集合表   创建数据表
+		db.name.insert({})    创建数据
+		obj={name："张三",age:88}
+		db.name.insert(obj)  创建数据
+		db.name.remove({name:'zhangsan'})删除某条数据
+		db.name.update({要更新的数据}，{$set:{更新成新的数据}}，{multi:true})   {multi:true}更新多条
+									{$inc:{age:5}--把age值增加5
+									{$unset:{age:1}--删除部分数据
+		
+		
+		
+		
+	</body>
+</html>

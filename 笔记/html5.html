@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		表单新特性：
+		<input type="" placeholder="修护精华" data-reactid="12" onfocus="if(this.placeholder=='修护精华'){this.placeholder=''}" onblur="if(this.placeholder==''){this.placeholder='修护精华'}"/>
+		<input type="text" autofocus/>   <!--autofocus  自动聚焦-->
+					file   multiple         上传文件     multiple 多个
+		
+						pattern='\d{3,10}'   正则表达式验证表单  
+		 			email   required       空表单不能提交  表单不能为空
+		input   type=email         邮箱标签
+	             url     网址标签
+	             number  数字   mix=   min=   step=  每次变化多少
+		input   type='range'   min='0'  mix='100'   value='30'   滑竿     
+		        type='date'     选择日期
+		        type='color'    颜色
+		
+		<audio src="music.mp3" controls  autoplay loop="2"></audio>    
+		                                    插入音乐标签      controls标签显示出来    autoplay自动播放      loop指定播放次数
+		                         pause()音乐暂停事件              play（）事件  音乐继续     muted静音
+		video支持 mp4、ogg、webm、格式
+		<video src="" controls  autoplay loop poster="2.png" ></video>   poster指定视频封面
+		             js里实现视频播放   v.play（）         暂停v.pause（）    if(vido.paused)返回视频是否暂停      v.currentTime=v.currentTime（播放到哪了）+5
+		             v.muted=！v.muted     静音   
+		             v.addEventListener('play',function()  //视频播放事件    
+					v.addEventListener('pause',function()//视频暂停事件
+					v.addEventListener('ended',fu)视频结束事件
+		        v.onplay=function          onplay事件   只要点击了播放就会触发该事件
+					duration--返回视频长度   
+					volume  --返回视频音量
+				if('oninput' in dom){
+					谷歌支持       oninput --用户输入时触发事件
+					dom.addEventListener('inout',fn,false)
+				}else{
+					ie支持
+					dom.onpropertychange=fn
+				}
+				      
+				jq  $('#div').bind('input porpertychange',fn)
+				
+				
+			
+			<!-- [if lt IE 9]>
+	    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+	
+		<section></section>  文档中的区段，解释了 PRC： 
+	   <header contenteditable></header>头部标签     contenteditable 可以在页面中编辑内容
+	   <nav  hidden></nav>导航栏标签 
+	       <menu>查单</menu>                                                  hidden  隐藏   和display：none 一样 
+	    <footer></footer>底部标签
+	   <article></article>文章标签
+	   <aside></aside>边栏标签
+	    <progress  max='200' value='100'></progress>  进度条   max  min  
+   		
+   		<datalist >     详情标签
+   			<option>ss</option>
+   		</datalist> 
+   		<details>
+   			<summary>标题</summary>
+   		</details>
+   		
+   		<dialog open="true">   对话标签
+   			  <dt></dt>
+   			  <dd></dd>
+   		</dialog>
+   		<address> 地址标签</address>
+		        
+		display:flex    将外层容器转换成弹性合模型模式
+		flex-direction:row;     排列方向
+		justify-content：center   主轴上的排列方式  居中排列
+						：space-around    均分排列
+						：space-between    两边零间距中间均分
+		align-items：flex-start	 交叉轴方向的对其方式（一行）     交叉轴起点对齐
+					flex-end  交叉轴的终点对齐
+					center    中间对齐
+					baseline   第一行文字基线对齐
+		flex-wrap：wrap      挤不下换行
+		
+		align-center：flex-start   交叉轴多根轴线的对齐方式 （多行）    交叉轴起点对齐
+					flex-end     交叉轴的终点对齐
+					center       中间对齐
+					space-around  两边零间距中间均分
+					space-between  均分排列
+					
+		align-self:flex-start;给单个子元素加不同的对齐方式
+		order:-1;  排序默认是零
+		flex-grow：1；沾满剩余空间;默认是零	
+		outline:3px solid rgba(255,255,255,0.5)    边框不占空间
+		
+		-moz-outline-radius:8px;                  圆角边框
+		background:-moz-linear-gradent(left,yellow，blue)
+		浏览器前缀           火狐-moz-    谷歌-webkit-      欧朋-o-       IE浏览器   -ms-    
+		vertical-align: bottom;
+
+		on（‘touchstart’，fun）    移动端手按下
+		     touchend          抬起
+		     
+		 <!--动画执行状态-->   
+		animation-play-state：'paused'    动画暂停		
+		animation-play-state：'running'   动画继续
+		
+		
+		<!--h5的新的储存方式-->
+		
+		localStorage---本地存储
+		cookie--有大小限制
+		localStorage--理论无限制
+		设置方式：
+		1.
+		localStorage.user='lisi';
+		localStorage.name='kk';
+		2.
+		localStorage.setItem("name",[1,2,3]);
+		获取：
+		console.log(localStorage.name)
+		var c= localStorage.getItem("name")
+		console.log(c)
+		删除
+		localStorage.removeItem("name")
+		删除所有
+		localStroage.clear()
+		
+		sessionStorage---临时存储关闭浏览器就会清除
+		设置和获取方法和localStorage一样
+		window.onload=function(){//网站访问量
+			localStorage.fangwen=1
+		}else{
+			var x=Number.(localStorage.fanwen)
+			x++
+			localStorage.setItem('fanwen',x)
+		}
+	
+		
+		
+		
+		<!--兼容手机端-->
+		<meta name="viewport" content="width=deivce-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"  />
+		
+<!--canvas应用-->
+         flex: 0 0 20%; 
+		pointer-events: none;  神属性  元素永远不会成为鼠标事件的target。但是，当其后代元素的pointer-events属性指定其他值时，鼠标事件可以指向后代元素，在这种情况下，鼠标事件将在捕获或冒泡阶触发父元素的事件侦听器。
+		<canvas id="c1" width="300" height="300"></canvas>   画板				
+		<script type="text/javascript">
+			var c1=document.getElementById('c1');
+			var ctx=c1.getContext('2d')       构造绘画环境2d
+			ctx.strokeRect(0,0,100,100)   绘制宽高100的矩形
+			               坐标               范围
+			ctx.clearRect(0,0,c1.width,c1.height)     清除画布
+			ctx.beginPath()开始路径
+			ctx.moveTo(100,100)设置中心点
+			ctx.lineTo()      画线
+			           坐标    圆的半径   0度到360度
+			ctx.arc(100,100,50,0,360*Math.PI/180,false)
+			ctx.closePath()结束路径
+			fillstyle='red'  颜色
+			ctx.rect(20,20,150,100)  绘制矩形
+			ctx.fill()    填充
+			ctx.stroke()  描边
+			ctx.translate(x,y)移动原点
+			ctx.rotate(deg)旋转(累加)
+			ctx.save()保存状态
+			ctx.restore()恢复状态
+			
+			
+		<svg>绘图
+				宽    		高					填充		填充透明度			描边			描边宽度			描边透明度
+		<rect width="" height="" x="" y="" fill="" fill-opacity="" stroke="" stroke-width="" stroke-opacity=""></rect>矩形
+		
+		</svg>
+		
+		
+		em=父元素的fontsize值html默认是16
+		rem是根据html的fontsize值去改变
+		rem适配
+		rem适配原理根据屏幕尺寸动态改变html的font-size属性值
+		主流设计图650    iphone5s
+		现在主流设计图750  iphone6s
+		1rem=100px(设计图)
+		设计图是750px
+		设备真实宽度是375px
+		function adaptive(){
+		document.documentElement.style.fontSize=window.innerWidth/7.5+'px';
+		var width=document.documentElement.clientWidth
+		if(width>=750){
+			document.documentElement.style.fontSize=width/7.5+'px';
+			}
+		}
+		window.onresize=function(){
+			adaptive()
+		}
+		
+		</script>
+		
+		
+		
+	
+		
+		
+	</body>
+</html>

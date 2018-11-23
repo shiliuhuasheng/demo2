@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>京东</title>
+		<!--网站图片-->
+		rel="shortcut icon"
+		type="image/x-icon"
+		href="图片路径"
+		<link rel="shortcut iocn" type="image/x-iocn" href="图片地址"/>
+
+	</head>
+	<body>
+<!--	主流浏览器       -->            内核
+		IE                       trident
+		Chroem                   webkit/blink
+		firefox                  Gecko
+		Opera                    presto	
+		Safari                   webkit
+		<script type="text/javascript" src=""></script>
+		变量( variable)
+		 var a;   (声明变量) let
+		 a=100
+		 document.write(a);
+		 
+		 弱类型语言、动态语言、基于原型的面向对象
+		 
+		 ECMAscript   语法规范
+		 DOM          文档对象模型		 
+		 BOM          浏览器对象模型
+		 
+		 click   点击事件
+		 js 语句   ；结束
+		 变量 作用    是用来储存值得
+		变量的声明   var  a，b，c='abc'，
+		变量的赋值 a = 2； 
+		变量的命名
+		输出在控制台输出 console.log(a)
+		
+		console.log()会在浏览器控制台打印出信息
+		console.dir()可以显示一个对象的所有属性和方法
+		
+	<!--	基本数据类型（栈）-->
+		undefined   表示未定义未负值   null清空内容（）
+		
+		number数字类型
+		
+		string 字符串类型用“”    要换行拼接 用+号
+		
+		   false假（0）  和   true真（1）
+		检测数据类型(typeoof a)
+		
+	<!--	系统对话框    -->     
+		alert（1234）弹出框      
+		  
+		确认框   confirm（你确定）     接收  真   假
+		                                      提示                      默认值
+		输入框     prompt（输入银行卡  ，“123” ）  输入内容
+		
+			
+			引用类型 （堆）
+	    array 数组    Function  函数         object对象
+			
+		  array 数组 	
+		  
+		  属性    下标  0开始
+		  console.log(a[0])
+		
+		Function 函数  代码块
+		
+		                         名字（随便起）
+		Function sayhi（）{
+			var a = 1
+			console.log(a)
+		}	函数需要执行才会显示
+		函数调用             函数名加（）
+		
+		
+		object 对象  无序
+		
+		js类值对象      date 时间对象               math数学对象         RegExp  正则       
+		
+		方法  ：
+		
+		
+		length   长度
+		continue;    跳过本轮循环
+		break；终止整个循环      
+		default:默认语句
+		for(){}循环
+		
+		while(条件(a>5)){  a--}循环       当什么   满足括号里面的条件执行循环体
+		
+		do{}while()
+    		
+    	window.onload=function(){}
+
+        return    函数返回值       遇到return函数就不再往下执行了
+        
+	    this.style.background=
+	    
+ 
+	          
+<!--	          对象   创建  以及调用-->
+		json对象 创建    var car={key：value ,} 注意一定要用逗号隔开
+		空对象创建方式   var car= new object（）        给空对象添加属性 car.name='张三'，
+		对象调用方法：  car.key  点的方式调用，	   car[key]来调用      
+		两种调用方法的区别[]调用方式能调用  Number类型的key元素，还能调用变量类型的元素。
+		
+	<!--	js 对象 -->
+		内置对象：string 对象，Array对象,math数学对象，Date日期对象，regExp正则表达式
+		自定义对象：1、json形式对象 2、new object  3、工厂函数  4、构造函数
+		原型属性 prototype    完成继承和共享 
+		
+		constructor--构造器--分辨对象属于哪个构造函数   console.log(元素.coustructor)
+		instanceof---左边是对象<-->右边是构造器--判断是否相等
+		Object.keys（）---查看所有一个对象本身---的所有属性----返回一个数组；
+		
+	<!--	this 的指向-->
+		纯粹的函数中--this代表 window
+		json对象的this---》指向上一层对象
+		事件函数中this代表当前发生事件的元素对象
+		构造函数中--this带表实例化函数对象、
+		this的存储嵌套使用      var that=this  
+		
+		改变this的指向call和apply--->完成继承
+		call函数 把this指向改变成了car 可以说继承了car
+		say.call（car，6,7）；
+		say.apply（car，[6,7]）；
+		相同之处都可以改变this指向完成继承
+		不同之处--参数的设置不同
+		
+<!--		bind()-->
+		this值会被绑定到传给bind（）函数的值
+		
+		
+       <!--创建数组-->
+                      数组：数组可以是储存一组或者一系列相关数据的容器
+                     访问数组的数据用索引（下标），从0开始
+                      数组可以储存任何类型的值
+      <!--构造法创建数组-->
+        1.var arr=new Array('1',55,true)
+      <!--字面量方式创建-->	
+	     var arr1=[]
+	     
+		数组长度arr.lenth 
+		可以手动截取数组的长度 减小数组长度 
+		增加数组长度 对数组没有什么影响增加的都是undefined
+		清空数组 arr.lenth=0
+		
+		
+		<!--数组的方法-->
+		push（）在数组的末端添加一个元素，返回新的长度，
+		unshift（）在数组的第一个位置添加一个元素，返回新的长度，
+		pop（）删除数组的最后一个元素，返回被删除的元素，
+		shift（）删除第一元素，返回被删除的元素
+		splice（index(从第几个开始删除),num（删除几个，不删除就用0代替）,ele（在删除的地方添加元素））返回被删除的元素
+		
+		reverse()--用于颠倒数组中元素的顺序，返回改变后的数组
+		
+		sort（） --不是按照大小排序，而是按照对应字符串的assic编码顺序排序，
+		如果按照其他顺序排序可以在括号里输入函数function（a，b）{return b-a }反序
+		join（）--以参数作为数组每一项的分割符，组成一个字符串返回，不提供参数默认为逗号分割   看返回值
+		            join（''）把数组转换成字符串
+		concat（）---连接一个或者多个数组 返回新的数组
+		slice（start（从哪开始下标），end（结束））留头不留尾    不影响原数组
+		--选取数组的一部分，返回新的数组  ， 如果就传一个数字就是选取到到最后
+		forEach(function(ele（数组的每一项），index（下标），arr（整个数组）){})遍历数组的方法
+		
+		
+<!--Array.isArray-->(x)判断是不是数组 返回true false
+		
+		<!--字符串的方法-->
+		1.charAt（index）--返回下标处的字符
+		2.charCodeAt(index):返回字符的unicode编码整数   charCodeAt编码大于225为中文字符小于则为英文字符
+		   （）代表指定位置上的字符 unicode编码
+		3。fromCharCode（）：传Unicode 编码 返回相应的字符
+		4.indexOf（）：返回string对象第一次该出现字符的字符位置  如果没有出现则返回-1
+		5.lastIndexOf（）；返回string对象中最后一次出现该字符的字符位置
+		通常拿4,5组合做判断是否是只出现过一次，4==5则只出现一次
+		 <!--字符串截取-->
+		 6.substr（index，unm）从index开始截取，截取unm个， 一个参数截取到最后
+		 7.substring（start，end）从start开始截取，到end结束，留头不留尾   一个参数截取到最后
+		8.toLowercase():返回一个字符串，该字符串被转换为小写字母
+		9.toUpperCase（）：返回一个字符串，该字符串被转换为大写字母，
+		10.split（）:将一个字符串分割为数组，不传参 --把字符串分割为数组一项，传''把字符串分割为数组的每一项
+		           ("")把字符串转换成数组
+		11.replace（old（要被替换的字符），new（替换成***））：返回根据正则表达式进行文字替换后的字符串的复制
+		
+		
+<!--**--------------事件------->
+		onclick 点击事件
+		ie和谷歌中window.onmousewheel    鼠标滚轮滚动事件
+		ff火狐中window.addEventListener('DOMMouseScroll',function (){},true )  滚轮滚动事件
+		
+		window.onresize      窗口大小改变事件          
+		window.onscroll     页面滚动事件   
+		window.onhashchange     hash值改变事件  
+		
+		onfocus  获取焦点事件
+		onblur  失去焦点事件
+		onmousemove   鼠标移入一直触发  鼠标移动事件	
+		clientY 鼠标Y轴   clientX 鼠标X轴    可视网页       pageX 鼠标X轴  pageY 鼠标Y轴  整个网页
+		onmouseover   js鼠标移入  触发一次  this。className移入子元素也触发事件			
+	    onmouseout    鼠标移出                                鼠标移入
+	    
+	    onmouseenter   鼠标移入   和上面一组的区别  是移入子元素不触发事件  只在自身触发事件	    
+	    onmouseleave   鼠标移出 
+	    
+	    onmousedown     事件会在鼠标按键被按下时发生。
+	                    offsetX  -- offsetY   事件源发生事件的位置
+	                                                   鼠标右键e.button=2  左键button=0  滚动条button=1
+	    onmouseup       鼠标抬起时触发
+	    ondblclick     双击事件
+	    oncontextmenu   鼠标右键事件     
+	                     return false   e.preventDefault()   阻止右键菜单出现
+	    
+	    document.onkeypress   键盘事件		    
+	    onkeyup         键盘抬起事件	   
+	    onkeydown       键盘按下触发   可以连续触发   任意键盘按键  不能区分大小写
+	    onkeypress      键盘按下触发   可以连续触发    字母类键盘按键 对应asc码的  能区分大小写
+	    onkeyup         键盘抬起触发   不可以连续触发
+	    document/window.onresize    整个窗口大小改变事件	    
+	    document/window.onscroll    页面滚动事件   scrollY滚动条Y轴的距离
+	                    window.pageYOffset   滚动条Y轴的距离
+	    
+	    
+<!--	    文本类事件-->
+		oninput   表单内容改变事件
+         form表单  --  action: 地址提交    method：提交方式
+	    onchange 事件    表单元素改变事件     下拉框，复选框，单选框
+                 selectedIndex----选取下标
+	    onsubmit   表单提交时触发事件
+	    docoument.forms[0]--获取页面中表单
+	    onreset--表单重置时触发
+	           var x=confirm（确认重置表格吗)
+	           retrun  -- false   阻止默认事件
+	           e.preventDefault()阻止默认事件
+	    onselect ---文本输入框的文字被选中事件
+		
+<!--  **Date日对象期-->
+		new Date（）获取系统时间		 
+		<!--setInterval定时器-->重复执行
+		setInterval(function，时间（2000），函数的实参)，每两秒获取一次系统时间
+		toLocaleString()--日期和时间转换为本地格式的字符串		
+		clearInterval(定时器名字)清除定时器
+		<!--延时器 -->
+		setTimeout (fn,延迟时间，参数) 只执行一次
+		clearsetTimeout暂停延时器 (输入延时器名字)
+		
+		<!--日期对象的方法-->
+		var myDate=new Date（）;（2018,09,20）(2018-09-20)
+		获取年、                                                                 设置
+		var year=myDate.get（获取）/set(截取)Fullyear();//2018
+		获取月
+		var month=myDate.getMonth();//0-11 月要加1
+		获取日
+		var days=myDate.getDate();//0-31
+		获取星期
+		var week=myDate.getday();//0-6  
+		获取小时
+		var hour=myDate.getHours();//0-24
+		获取分钟
+		var minutes=myDate.getMinutes();//0-59
+		获取秒
+		var second=myDate.getSeconds();//0-59
+		获取毫秒
+		var millisecond=myDate.getMilliseconds();//0-999
+		<!--getTime() 获取距离1970年1月的毫秒数-->
+		document.write(myDate.getTime())
+<!--		方法中加UTC代表世界时间-->
+		var second=myDate.getUTCHours()
+		
+		
+		<!--转换格式-->
+		toLocaleString()--把日期和时间转成本地格式字符串；
+		toLocaleDateString()--把日期转成本地带格式字符串
+	    toLocaleTimeString()--把时间转成本地带格式字符串
+		toGMTString（）--把日期和时间转成格林威治的字符串
+		
+		
+		<!--时间戳-->
+		浏览器的储存 localStorage.buy
+		
+	<!--	数学对象math-->
+		 属性
+		math.PI----π---圆周率---3.14  Math.PI*r*r(圆的面积)
+		Math.E自然常数，是数学科的一种法则。约为2.1782
+		 2的平方根  Math.SQRT2--1.414
+		
+	<!--	数学方法-->	
+		1、随机数 Math.random()--返回0-1之间的随机数包含0不包含1
+		       随机数公式a-b之间的随机数整数
+		       Math.floor(Math.random()*(b-a)+a)
+		2、向下取整Math.floor（）
+		3、向上取整Math.ceil（）
+		4、四舍五入 Math.round（）
+		5、最大值 math.max(x,y,z)
+		6、最小值 math.min(x,y,z)
+		7.x的y次幂 Math.pow(x,y)
+		8平方根 Math.sqrt(7);
+		
+		
+<!--        正则表达式-->
+		（Regular Expression、regex），是用来描述匹配一系列符合某个句法规则的字符串
+		主要 是检测数据验证，文本替换、内容检索与过滤等
+		
+<!--		正则表达是的创建  -->
+		1、构造法  
+		var reg =new RegExp（"[0-9]{4}"）;
+		2、字面量创建
+		var reg1=/^[1-9][0-9]{4,9}&/;qq号的；
+		
+<!--		正则的方法：-->
+		test（）：匹配一个字符串是否符合正则表达式，成功返回true失败返回false
+		   varx=reg.test（tval）
+		exec（）；如果发现匹配就返回一个 数组，否则返回null
+		
+<!--       正则给字符串用的方法：-->
+str.      match(正则表达式)--找到一个或者多个正则表达式的匹配值，返回一个数组
+		  search（正则表达式）--搜索与正则表达式相匹配的值，返回值得下标值，如果没有返回-1
+		  split（）--按照正则表达式分割字符串
+		  replace（正则表达式，替换成字符串）--替换字符串
+		
+		
+<!--		正则的书写规则；-->https://c.runoob.com/front-end/854 正则网站https://c.runoob.com/front-end/854
+		修饰符/.../g  --g-全局匹配
+		     /.../i  --i -不区分大小写
+		     ^  ---开头        /^[]{}$/
+		     $  ---结尾
+		* 任意次，可任意看做{0，}
+		？ 0次或者一次，可以看做{0,1}
+		+ 一次或者任意次，可以看做{1，}
+		{m} 正好m次
+		{m，} 至少m次
+		{m，n}至少出现m次 最多n次，默认是按最多次数
+		{m，n}？ 按最少次数匹配
+		[^a]非a     
+ 		[] --限定某一位上字符的取值范围，
+ 		任意字符：【abc】a、b、c中任意的字符
+ 		组合：【a-z0-9A-Z】
+ 		排除：【^a】
+ 		\w --匹配字母数字下划线的字符【a-zA-Z0-9】
+ 		\W --匹配除字母数字下滑线之外的字符 [^a-zA-Z0-9]  和上面刚好相反
+ 		\d --匹配数字[0-9]
+ 		\D --匹配非数字
+ 		\s --匹配空白字符，空格制表符和换行符；
+ 		() --正则表达式的分组    | --正则的逻辑 或
+ 		.  --代表除了换行以外的任何字符
+ 		\  --表示转义符
+ 		
+ 		
+ 		
+		
+ <!--     Error.name的六种错误信息-->		
+		1、EvalError；eval（）的使用与定义不一致
+		2、RangeError：数值越界
+		3、referenceError；非法或者不能识别的引用数值；
+		4,SyntaxError；非法语法解析错误
+		5,TypeRrror;操作数据类型错误
+		6、URIError:URI处理函数使用不当
+		
+		
+<!--        dom增 删 改-->                
+        增加属性
+        1、自带属性
+        divs.id='box';
+        divs.className='text'
+        2.自定义属性setAttribute
+        divs.setAttribute('index','0');
+        
+        3元素添加内容
+        inpus.value='sss'
+        divs.innerHTML--设置文本和标签
+        outerHTML--替换标签和文本内容
+        
+  <!--        创建元素添加到页面   -->              
+                   创建元素var divs=document.createElement('div')
+         var hs=document.createElement('h3')  创建元素
+          1.父对象.appendChild(追加的对象)       插入到父元素
+  	
+  
+<!--           操作元素的属性-->
+         1、自带属性
+         2、自定义属性
+	    getAttribute  获取自定义属性
+	         var imgindex=img.get（获取）Attribute('index')
+	    setAttribute   设置属性   添加属性
+	         img.set（设置）Attribute('src'（属性名）,'img2.jpg'（属性值）)
+	    classList.add   在元素中添加一个或多个类名。
+	             .contains(class)返回布尔值，判断指定的类名是否存在。
+	             .remove(class1, class2, ...)移除元素中一个或多个类名。
+	             .toggle(class, true|false)在元素中切换类名。第一个参数为要在元素中移除的类名，并返回 false。 
+                                                                                                                                                   如果该类名不存在则会在元素中添加类名，并返回 true。 
+	         移除属性 
+	         img.remove(移出)Attribute（属性)
+	    hasAttribute('属性'）---判断当前元素节点是否包含指定属性，返回布尔值  
+	    instanceof是Java的一个二元操作符（运算符）,也是Java的保留关键字。它的作用是判断其左边对象是否为其右边类的实例，返回的是boolean类型的数据。用它来判断某个对象是否是某个Class类的实例。
+				　用法：boolean result = object instanceof class
+
+
+　
+	    
+	    Object.prototype.hasOwnProperty.call(obj, 'bar'); // true   判断'bar'是不是obj原型链上的属性
+	    
+	    dom一起设置多个样式：
+	    box.style.cssText='width:200px;height:200px;'
+	    insertBefore  元素前面插入元素：
+	         父元素.insertBefore(插入的元素，参照物)
+	         
+	         
+         
+  <!--      dom   --> 最大的对象是document
+            document.title---网页的标题
+            document.body---网页标签
+            document.documentElement--整个文档 html
+            document.URL ---返回当前文档的url网站的地址
+            document.bgColor--body的背景
+            document.fgColor--文字颜色
+<!--          如何获取样式-->
+            ie浏览器--获取css样式e.currentStyle.width（属性）
+                  谷歌和火狐FF浏览器：getComputedStyle(对象，null).color（属性）
+            
+         <!--元素对象 属性-->
+         nodeType--节点类型
+           //1--代表元素
+           //3--代表文本节点                 data代表节点内的文本
+             8--代表注释节点
+         nodeName---元素节点名--LI--大写
+                 ---文本节点--#text
+                 ---注释节点--#comment
+<!-- *        获取节点-->
+	             获取第一个节点firstChild      获取元素中间加一个Element
+	                console.log(two.firstChild);
+	                获取最后一个节点 lastChilid
+	                console.log(two.lasttChild);
+	                获取下一个兄弟节点 nextSibling
+	                console.log(two.nextSibling);
+	                获取前一个兄弟节点  previousSibling
+	               console.log(two.previousSibling); 
+	               所有的子节点childNodes
+	               console.log(two.childNodes); 
+	               父节点--父元素parentNode
+	               console.log(two.parentNode);  
+	               返回有定位属性的父元素----offsetParent
+	               console.log(two.offsetParent)
+	               返回所有子元素children[]
+	               console.log(two.children)
+   
+ <!--        获取元素-->
+	    item
+	    document.querySelector("body>.list>li")  只能选第一个     
+	    document.querySelectorAll("body>.list>li")   集合节点列表  静态
+	    var a = document.createElement("li")   添加标签 创建一个元素
+	    
+<!-- *   删除元素-->
+          replaceChild 替换
+	          替换节点  父元素.replaceChild(要替换的,被替换的)
+	      removeChild 删除 
+	          删除节点  父元素.removeChild(删除的元素)； 
+	        remove   自毁  
+                 删除元素本身 元素本身.remove()
+        
+  <!-- *       事件冒泡-->
+        addEventListener事件监听   冒泡  捕获
+        addEventListener（事件，执行函数，true）  false冒泡       true捕获
+        ff// e.stopPropagation()               阻止冒泡
+        ie// window.event.cancelBubble=true;   阻止冒泡
+<!-- **    ---事件委托-->
+   **   e.target---事件委托   把事件绑定在父元素上，通过e.target来操作发生事的元素       
+                 box.innerHTML=e.target.innerHTML
+        e.type-----返回事件类型
+        e.offsetX--e.offsetY--鼠标在事件元素上发生的位置
+
+
+ <!--   获取整个可视页面的高度  -->
+        left=(window.innerwidth/2-自身宽度的一半)+'px'
+        top=(window.innerheight/2-自身高度的一半)+'px
+ 
+        offsetWidth和offsetHeight   获取包括元素的宽度和高度包括padding和边框
+         var left=box.offsetWidth
+        clientWidth和clientHeight ---返回元素宽高，不包含滚动条和边框   包含padding
+        scrollHeight和scrollwidth ---没有滚动条时  和clientWidth相等  
+                     出现滚动条后---包含隐藏部分的宽度
+        //------------------------------------------------
+        offsetLeft和offsetTop---距离父元素的左和上的距离
+        clientLeft和clientTop--返回元素边框的宽度
+        scrollLeft和scrollTop --返回元素的滚动条距离
+        
+        window.onscroll=function(e){
+        	var top=document.body.scrollTop||document.documentElement.scrollTop;获取滚动条Y轴的滚动距离
+        	console.log(window.pageYOffset+' '+window.pageXOffset)   获取滚动条XY轴的滚动距离
+        }	
+        
+        
+        
+        
+<!--     BOM     -->
+          innerWidth--innerHeight----窗口的宽高  不包括地址栏          
+          outerWidth--outerHeight---窗口的宽高--包括地址栏         
+          window.length返回窗口中的框架数
+
+<!--    Bom全局方法-->
+          alert('警告框')
+          confirm('确认框')
+		  var x=prompt（'输入名字','李（默认值）'）
+		  
+		  window.open( URL(网页地址),name（网页，名字）,specs（能设置新网页的宽高属性）,replace)打开新的网页
+		  window.close()  关闭窗口
+		  ie支持
+		  window.resizeBy() 按照指定的像素调整窗口的大小
+		  window.resizeTo() 把窗口的大小调整到指定的宽高		  
+	**	  window.scrollBy()  按照指定的像素值来滚动内容
+	**	  window.scrollTo()   把内容滚动到指定的坐标
+		  
+		  
+		  screen对象---对象包含有关客户端显示屏幕的信息
+		  document.write(window.screen.width+'--'+window.screen.height)
+		  screen.availHeight  返回显示屏幕的高度  （除window 任务栏之外）
+		  screen.colorDepth  返回目标设备或缓冲器上的调色板的比特深度
+		  pixelDepth   返回显示屏幕的颜色分辨率（比特每像素）
+		  
+	<!--	navigator---返回浏览器信息-->
+				navigator.appCodeName---浏览器代码名 mozilla
+				navigator.appName--Netscape--浏览器名称
+				navigator.version--浏览器的版本
+				navigator.language--浏览器语言
+				navigator.platform--浏览器操作系统
+				
+				navigator.userAgent--返回用户请求头信息
+		  navigator.userAgent--返回用户请求头信息
+		  if(navigator.useragent.indexOf('Chrome')!=-1){
+		  	alert('谷歌浏览器')
+		  }
+		  
+		  http://www.baidu.com---域名
+		  http://--协议
+		  域名--域名解析---DNS服务器---ip地址（）
+		  端口号（0-65536）
+		  
+<!--     location 的属性--> 对象包含有关短期URL的信息
+		  location.href  设置或返回完整的URL地址
+		  location.host----返回ip和端口
+		           hostname---返回ip
+		           hort---端口号
+		           pathname路劲部分
+		           protocol协议
+		           用href去跳转并添加？号后面是search和#号后面试hash值
+<!--  *    location.href=''  -->
+		           search设置或者返回从？开始的URL(查询部分)
+		            hash设置或者返回从#号开始的URL（锚）
+		            
+	<!--   地址栏传汉字   -->	
+					编码	encodeURI()
+					location.href="a.html?name="+encodeURI("张三");
+                      decodeURI("张三")解码	
+		  
+<!--      location得方法    -->
+         location.assign（'http/...'）   加载页面  产生历史记录能返回
+         location.replace('http/..')  加载页面  不能返回
+         location.reload（） 不传参 用来刷新页面重新加载
+		  
+		  
+<!--    history  对象   的方法 --> 
+       history.forward()  前进一步类似在浏览器中点击前进按钮
+	   history.back（）      退一步，类似在浏览器的工具栏返回按钮  
+	   hisstory.go（-2）      可以参传正负   前进几步后退几步
+		
+		
+<!--		cookie---->-浏览器的储存    html5（localStorage）
+		
+		cookie--大小 4kb左右大小
+		1byte = 8bit
+		1024b = 1kb
+		
+		一个ip地址只能有一套cookie
+		设置cookie  第一个参数  name=value
+	    document.cookie='name=zhangsan'
+	    设置cookie过期时间  expires=时间
+	    var mydate=new Date();
+	    mydate.setMinutes(26)
+	    document.cookie='age=88;expires='+mydate.toGMTString();
+	     获取cookie
+	     var cookies=document.cookie;
+	     
+	    <!-- 克隆 -->
+	    cloneNode（true）克隆元素的内容
+	    var myli=lis[1].cloneNode(true)
+
+	<!-- 	json形式对象 -->
+		  var obj={
+			name：'张三'；
+			age：4；
+			set：function（）{
+			}
+		  }
+		JSON,全称是javaScript Object Notation。
+		它基于是javaScript编程语言的一种轻量级的数据交换格式，
+		主要用于跟服务器进行交换数据，跟xml相类似，它独立语言，在跨平台数据传输上有很大的优势
+		jion 的key值要加“”；
+		方括号保存数组[]
+
+		JSON转字符串 JSON.stringify
+		var carstr=JSON.stringify（obj）；
+
+		字符串转JSON   
+		JSON.parse（carstr）；
+		
+		eval --方法能解析代码字符串的能力非常强大，但也非常危险
+		        因此在使用eval是需极为谨慎，特别是在用他执行用户输入的情况下；
+		        否则可能会有恶意用用户输入威胁你的站点或应程序安全的代码（即所谓的代码驻入）
+		var x=eval（str）
+		
+		
+		prototype--- 继承和共享
+		prototype--函数才有的数据
+		__proto__    原型链是每个对象都有的属性		
+		原型指向上一层对象的原型   最终指向unll
+
+		
+			
+		
+		
+			</body>
+</html>

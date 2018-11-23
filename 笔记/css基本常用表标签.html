@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		标签的组成： 标签名+属性
+	常用标签：
+	h1-h6  标题标签
+	p     段落标签 
+	a     超链接  href=“地址”  
+	              target=“_blank”跳转到新的页面打开 
+	              target=“_self”在本身页面打开
+	              title   鼠标放在链接上提示文字    
+	ins        下划线标签  
+	del        删除线
+	input   type=email         邮箱标签
+	             url     网址标签
+	             number  数字   mix=   min=   step=  每次变化多少
+	input   type='range'   min='0'  mix='100'   value='30'   滑竿     
+	        type='date'     选择日期
+	        type='color'    颜色
+	span  文字标签（不换行）
+	div   分块标签
+	br    强制换行
+	hr    分割线   width:  水平线宽度   size  水平线高度     color  颜色
+	i/em     文字标签 文字斜体
+	b/strong 文字标签 文字加粗
+	ul-li    无序列表
+	ol-li    有序列表
+	dl-dt-dd 自定义列表
+	button   按钮
+	img      图片  src  alt“”（用于图片加载失败提示）   title“”{鼠标放置提示}
+	pre
+	display ; block inline inline-block ; none 元素消失
+	
+	width:100vw---把视口宽度分为100份
+	height:100vh---把视口高度分为100份
+	
+	
+	from   表单 action数据传输的地址  method表单数据的传输方式 post/get
+	input   
+	     type='text'   输入框           placeholder="请输入账号"
+	     type="password"  密码框        placeholder ="请输入账号"
+	     type="checkbox"  复选框
+	     type="radio"  单选框    name 属性值要一致
+	     type="file"   文件选择
+	     type="range"  滑杆
+ 	     type="button" 按钮
+ 	     type="submit"  提交表单信息 
+ 	     type="reset"   重置表单内容
+ 	     <select >   下拉框
+	    		<option ></option>
+	    	</select>
+ 	     
+ 	   	     
+ 	     select-option   下拉列表
+ 	
+ 	table  表格
+ 	caption  表名
+ 	thead tbody tfoot
+ 	tr 行      thead 表头
+ 	td 列      th 表头
+ 	cellspacing单元格之间的距离      
+ 	cellpadding内容与单元格之间的距离
+ 	rules 内部单元格的边框显示
+ 	边框折叠   border-collapse: collapse;
+ 	align  表格居中方式
+ 	bgcolor 表格背景
+ 	
+ 	rowspan  合并行   从上往下
+ 	colspan  合并列   从左往右
+ 	
+ 	文本类********************************/
+ 	textarea  文本域    rows="20"高   cols="50"宽
+ 	position: relative（相对定位）; 块定位  absolute(绝对定位) fixed(固定定位)
+			 left: 430px;
+	border-radius:5px;      /*去除四个角,让角变园*/  50% 圆形
+	vertical-align: top;/*行内块和文字的上下对齐方式   */		    
+    text-aling:center 文字左右居中
+    text-indent:40px  首行缩进40px
+    text-indent: 2em;  首行缩进两个字符
+    line-heigh:px       文字上下居中
+    background:transparent url(） no-repeat  center center
+    
+    vertical-align：middle   把此元素放置在父元素的中部。
+    				sub   垂直对齐文本的下标。
+    				super 垂直对齐文本的上标
+    				text-top 把元素的顶端与父元素字体的顶端对齐
+    				top   把元素的顶端与行中最高元素的顶端对齐
+    				%     使用 "line-height" 属性的百分比值来排列此元素。允许使用负值。
+    				inherit  规定应该从父元素继承 vertical-align 属性的值。
+           
+           背景色透明 图片位置  不 重复   居中   居中
+	white-space:  nowrap ；            超出内容不换行
+	overflow:  hidden;        超出隐藏
+	text-voerflow:elliosis;       超出内容省略号替代
+	word-break:break-all; word-wrap:break-all;   表格文本超出自动换行
+	<table class="table" style="word-break:break-all; word-wrap:break-all;">
+	
+	font-weight: bold;         字体加粗
+	
+    letter-spacing:8px   字体间隔
+    margirn:0 auto    块左右居中
+       元素居中方式  ---left：50%；加 margin-left：负-元素自身的一半
+    margin-bottom: 8px; 往下加宽
+
+    font-weight：bold (100-800)  字体加粗  normal 普通字体
+    text-transform: uppercase;   字体变换大写
+    font-variant: 
+    
+    opacity:o.5    加透明0-1之间
+    rgba:
+    outline:5px 轮框  sold （实线） red    颜色
+    outline：none   去除默认轮框
+    border:none  去边框
+           style:dashed   虚线
+   box-sizing: border-box;  边框不挤来   往里边加     contain  填满
+    white-space：nowrap   文字超出隐藏
+   
+    white-space: nowrap;  超出内容不换行
+    overflow: hidden;   超出内容隐藏
+    text-overflow: ellipsis；  文字超出用省略号代替
+          以上三个配合使用
+           
+    list-style：none  去除列样式   disc 实心圆       decimal 数字         circle  空心圆         square 实心方块
+    list-style：url（img） 引入列表图标
+    list-style-position：  列表图标的位置  inside 里边
+    
+       ！important   加在元素后面 给元素增加权重到1000
+    overflow：hidden     给父元素清除浮动  在浮动父元素的结束标签前加一个空标签，并给清除浮动的元素 
+    clear：both 给子元素清除浮动
+    backgroung:url (img)  背景图片 no-repeat---不重复     conter背景图居中
+           repeat-x   向x轴重复   
+           repeat-y 向y轴重复  
+           position  中间
+    backgroung-image："ulr" 背景图片
+    backgroung-attachment:fixed 固定    scroll 滚动
+    
+    backgroung-size： 100px 100px   背景图大小
+    backgroung-position： （x轴）200px （y轴）100px 背景图定位
+                        cover 铺满，不保证完全显示
+                        contain 铺满 保证完全显示
+                        background-size:背景图大小
+     background：transparent ； 背景图透明
+     
+    transition: all 2s;  过度	  linear 0.2  匀速    ease 淡入淡出      ease-in    ease-out
+    
+    
+    cursor:pointer    鼠标变手型
+           
+    
+    text-decoration: underline 下滑线
+                    overline   上滑线
+                    line through 删除线
+                    none  去除
+    letter-spacing：3px；文字间距
+	默认值normal
+	可为正值或负值
+		例：p{letter-spacing:5px;}
+		例：p{letter-spacing:-5px;}
+     
+
+	伪类选择器   a链接使用的选择器
+	   link ---a未访问之前
+	   a：link{
+	   	 color：yellow;
+	   }	
+	   visited---a访问之后
+	   a：visited{
+	   	color:red;
+	   }
+   所以元素都能用的伪类选择器   
+   ：active---激活的一瞬间
+   ：hover----鼠标悬浮（ 鼠标经过）做什么
+   ：first-line----第一行文字
+   ：first-letter---第一个单词或文字
+   li:first-child{margin-left:0px;}  第一个li左边为0
+   li：nth-child(2n-1){  }            li里面的奇数项
+   
+
+
+    figure 标签 定义图片    figcaption 图片注解 
+       	
+    	伪类选择器   a链接使用的选择器
+	   link ---a未访问之前
+	   a：link{
+	   	 color：yellow;
+	   }	
+	   visited---a访问之后
+	   a：visited{
+	   	color:red;
+	   }
+	   
+	   
+	   -moz-user-select: none;
+       -khtml-user-select: none;
+        user-select: none;   禁止选择复制  以上上三行一起用
+        
+        font-size: 0 ；    去除图片默认边框
+	   
+   所以元素都能用的伪类选择器   
+   ：active---激活的一瞬间
+   ：hover----鼠标悬浮（ 鼠标经过）做什么
+   ：first-line----第一行文字
+   ：first-letter---第一个单词或文字
+   :：after     元素内容 后插入图片     要加content：“”；
+   
+       <!--在h1标签里插入一个小三角型-->
+  		.nav_piece h1:after{
+				content: "";
+				position: absolute;
+				right: 20px;	
+				top:46%;
+				border-top:5px solid #333 ;
+				/*transparent 代表0 0 0 0*/
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				z-index: 9999;
+			} 
+   
+   
+   css动画效果：
+          制作动画
+   @keyframes dd{
+				0%{transform:rotate(0deg); background: skyblue;}
+				50%{border-radius:40%;background:red;}
+				100%{transform:rotate(1000deg);background: skyblue;}
+				
+			}
+      动画引入animation:dd 4s linear infinite（无限循环）;
+   
+  
+   
+   html 5  新标签
+   语意话标签；
+   解决标签兼容：
+   	<!-- [if lt IE 9]>
+	    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+	
+	
+	<section></section>  文档中的区段，解释了 PRC： 
+   <header contenteditable></header>头部标签     contenteditable 可以在页面中编辑内容
+   <nav  hidden></nav>导航栏标签 
+       <menu>查单</menu>                                                  hidden  隐藏   和display：none 一样 
+    <footer></footer>底部标签
+   <article></article>文章标签
+   <aside></aside>边栏标签
+   
+   
+   c3属性                             
+   	圆角：		  x轴方向		Y轴方向
+   border-radius：10px 50px/20px 40px 60px 80px 
+            阴影	：	 x轴方向       y轴        模糊度     模糊尺寸    阴影颜色
+   box-shadow：10px -10px 10px 10px    red
+          渐变色
+   background:linear-gradient（to right，red，green 10% ，blue 30%）
+              	重复线性渐变
+              repeating-linear-gradient（
+                                           径向渐变				x轴         y轴
+    background：radial-gradient（20px 100%，red，yellow，while）
+   			      重复径向渐变
+   			  repeating-radial-gradient
+   	
+   	transform-style: preserve-3d;      3d效果
+    perspective: 800px;		  			景深
+    
+    box-sizing：border-box；怪异盒模型    centent-box；标准盒模型默认的   inherit --继承   initial--初始化
+   	
+   	resize：both；用户改变元素大小 两个方向    vertical--垂直    horizontal--水平       这个属性要配合overflow：hidden使用
+   			  
+   	vertical-align：top；能解决图片3px间距问题   moddle  调整文字与图片的对齐方式	
+   	text-shadow：5px 5px 5px blue    x轴  y轴  模糊度   颜色
+   	
+   	transform: 用于元素的变形处理 
+                     属性transform：translate（10px（横） ， 10px（纵））（平移）    rotate（旋转）     scale（缩放） skew （斜切）
+                        列   transform：rotate（90deg），      配合前面使用  transfrom-rorgin：0 0；（设置中心点）
+                transfrom:scale(0.5,0.5) 1以上是放大一下是缩小;   
+                skew（50deg，20deg）
+	   			 要过度的属性
+    transition-property:all；所有
+    transition-duration:3s;过度时间
+    transition-delay：1s;延迟
+    transition-timing-function:ease-in 慢速开始   linear--匀速  ease--加速   ease-out慢速结束   ease-in-out--慢速开始慢速结束
+ 	
+ 	background-clip:content-box;背景裁剪   背景显示在内容上不显示在padding和border上      
+ 	
+ 	background:linear-gradient(to right,red,green,block);文字颜色渐变
+ 	-webkit-background-clip：text；背景只在文字上起作用
+ 	color:transprent;
+ 	
+ 	column-width：300px；列宽
+ 	column-count：6；列数
+ 	column-gap:50px;列间距
+ 	column-rule：4px solid block；列边框
+ 	
+ 	 touch-action: none; 禁止触发默认的手势操作  手机端
+ 	 我们平常说的移动端300ms延迟，就可以使用 touch-action: manipulation; 来解决。
+ 	 
+ 	 引入外部字体
+ 	 @font-face{
+ 	 	font-family:'zidinyi';
+ 	 	src:url('dizhi')
+ 	 }
+ 	 
+ 
+ 	 
+ 	 
+ 	 
+	</body>
+</html>

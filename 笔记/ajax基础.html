@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+//			<!--ajax-->
+		form--前后端交互
+		action--提交地址  链接后端文件（接口）
+		method--提交方式
+			get--地址栏传参，有数据量限制100kb左右--安全性低
+			post--浏览器内部传参，数据无限制
+			get--post 一般后端决定
+			后端以get方式接收就以get方式发送
+		注册接口
+		url:"links/1.get.php"
+		type:get;
+		data:name
+		     age
+		success  打印用户提示（你的姓名：你的年龄：）     
+		localhost   本地服务器
+		ipconfig    服务器地址
+		
+//			ajax对象的创建
+			
+//			try语句
+			try{如果try里面的语句执行错误就执行
+			}catch(e){收集错误信息执行新语句
+			}finally{始终执行的语句}
+			做兼容
+			创建ajax对象的兼容
+			
+			var xhr=null
+			try{
+//				新版本浏览器
+				xhr=new XMLHttpRequest();
+			}catch(e){
+//				老版本ie浏览器
+				xhr=ActiveXObject("Microsoft.XMLHTTP")
+			}
+			
+//			ajax请求数据的四个步骤
+			1.创建对象
+			2.open方法open(method,action,async);
+			             mathod--（get和post)提交方式--与form表单相同/
+			             action--提交地址
+			             async --是否异步   true 和 false 
+			                     true 异步与其他代码一起执行
+			get方式地址栏传参
+//			post传参不同  设置请求头
+			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8")
+			
+			3.发送请求
+			xhr.send()  
+			
+			4.服务器返回数据 onreadystatechange---服务器准备状态改变事件
+			xhr.onreadystatechange=function(){
+				status--服务器（请求资源)的状态   200--请求成功
+				                          404--资源未找到
+				                          500--服务器故障
+				readyState 服务器状态 有四步
+				0（初始化)还没有调用open()方法
+				1（载入)已调用send()方法 ,正在发送请求
+				2（载人完成)send()方法完成,已收到全部响应内容
+				3（解析)正则解析响应内容
+				4（完成)完成响应内容,可以在客户端调用
+			if(xhr.status==200){
+				if(xhr.readyState==4){
+//					数据
+//					xhr.responseText--后台返回的数据
+//					xhe.responseXml 返回xml形式的内容
+					console.log(xhr.responseText)
+				}
+			}				
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

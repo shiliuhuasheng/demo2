@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+        <script src="vue/dist/vue.min.js"></script>
+        data 用于定义属性，实例中有三个属性分别为：site、url、alexa。
+        methods 用于定义的函数，可以通过 return 来返回函数值
+        我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行
+        {{ }} 用于输出对象属性和函数返回值。
+        指令：
+     使用 v-html 指令用于输出 html 代码：<div v-html="message"></div>message: '<h1>菜鸟教程</h1>'
+
+        v-for循环语句   <li v-for="(value, key, index) in object">{{value}}</li>
+                                <li v-for="n in 10"></li>
+        v-if 条件语句   <p v-if="seen">现在你看到我了</p>   true为显示  false就删除 
+                                    <div v-else-if="type === 'C'"></div>
+         v-show 我们也可以使用  指令来根据条件展示元素：
+        v-bind:class       v-bind 指令用于响应地更新 HTML 特性
+        指令后面更属性 如  class   href   url...
+                        <div :class="isOk?one:two"><div :style="{color:red,fontSize:mix}"></div>
+       v-model 指令来实现双向数据绑定：一般用在input输入框上<input v-model="message" >
+       v-on:click  简写@click  绑定事件  <input v-on:keyup.13="submit"> 
+       watch 会实时监听数据变化并改变自身的值。
+
+
+</html>

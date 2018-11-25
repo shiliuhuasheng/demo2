@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+    #warp{
+        margin:50px auto;
+        position: relative;
+    }
+    #warp>button{
+        float:left;
+
+    }
+    #warp>span{
+        float:right;
+    }
+    #warp .box{
+        border-top:1px solid black;
+        border-left:1px solid black;
+        
+        width:100%;
+        font-size: 0;
+        list-style: none;
+       
+    }
+    #warp .box li{
+        border-right:1px solid black;
+        border-bottom:1px solid black;
+        display:inline-block;
+        
+    }
+    .seTop{
+        background:red;
+        position:absolute;
+    }
+    .sheMian{
+        background:red;
+        opacity:0.5;
+        position:absolute;
+    }
+    .apple{
+        background:blue;
+        position:absolute;
+    }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <ul class="box">
+        </ul>
+        <button>开始游戏</button><span id="point">积分：</span>
+        <div class="snke"></div>
+    </div>
+</body>
+</html>
+<script>
+    (function(){
+        var warp=document.getElementById('warp')
+        var but = document.getElementsByTagName('button')[0]
+        var point=document.getElementById('point')
+        var boxData={//网格的数据
+            box:document.getElementsByClassName('box')[0],
+            lis:document.getElementsByClassName('box')[0].children,
+            row:10,
+            col:10,
+            size:25,
+        }
+        warp.style.width=boxData.row*(boxData.size+1)+'px';
+        var sheObj={//蛇的数据
+            snke:document.getElementsByClassName('snke')[0],
+            snkeMian:document.getElementsByClassName('snke')[0].children,
+            size:boxData.size,
+            x:3,
+            y:2,
+            timer:null,
+            speed:500,
+            direction:39,
+        }
+        var appleData={//苹果的数据
+            
+            apple:null,
+            arr:[],
+            size:boxData.size,
+            num:0,
+            point:5,
+        }
+        
+        function init(){
+            lis()
+            bind()
+        }
+        console.log(boxData.row)
+        function lis(){    //生成网格
+            for(var i=0;i<boxData.row;i++){
+                for(var j=0;j<boxData.col;j++){
+                    var li=document.createElement('li')
+                    li.classList.add("row-"+i,"col-"+j);
+                    li.style.width=li.style.height=boxData.size+'px';
+                    boxData.box.appendChild(li)
+                }
+            }
+        }
+        function bind(){   //点击开始游戏
+            but.focus()
+            but.addEventListener('click',function(){
+                snake()
+                apples()
+                snakeDirection()
+                console.log(appleData.apple)
+            },false)
+        }
+        function snake(){//创造蛇头
+            var she=document.createElement('div');
+            she.classList.add('seTop');
+            she.style.width=she.style.height=sheObj.size+'px';
+            she.style.top=sheObj.y*sheObj.size+3+'px';
+            she.style.left=sheObj.x*sheObj.size+3+'px';
+            sheObj.snke.appendChild(she)
+            snakeMove(she)
+            
+        }
+        function snakeMove(she){//蛇移动
+            sheObj.timer=setInterval(move,sheObj.speed)
+            function move(){
+                var left=she.offsetLeft
+                var top=she.offsetTop
+                switch(sheObj.direction){
+                    case 37:left-=sheObj.size+1
+                    break;
+                    case 38:top-=sheObj.size+1
+                    break;
+                    case 39:left+=sheObj.size+1
+                    break;
+                    case 40:top+=sheObj.size+1
+                    break;
+                }
+                she.style.top=top+'px';
+                she.style.left=left+'px';
+                snkeMianMove(she,sheObj.snkeMian)
+                if(pz(she,appleData.apple)){//判断吃上苹果
+                        appleData.num++
+                    var count=(appleData.num)*appleData.point
+                    appleData.apple.className='sheMian'
+                    sheObj.snke.appendChild(appleData.apple)
+                    apples()
+                    point.innerHTML='积分：'+count
+                    if(count%30==0){
+                        console.log('2')
+                        sheObj.speed-=50
+                        clearInterval(sheObj.timer)
+                        sheObj.timer=setInterval(move,sheObj.speed)
+                    }
+
+                }
+               if(gameOver(she)){//判断游戏是否结束
+                   alert('游戏结束')
+                   clearInterval(sheObj.timer)
+                   count=0;
+                  
+               }
+               appleRandom()
+               
+            }
+        }
+        function snkeMianMove(she,obj){//蛇身子跟着蛇头移动
+            
+            for(var i=obj.length-1;i>0;i--){
+                obj[i].style.left=obj[i-1].offsetLeft+'px'
+                obj[i].style.top=obj[i-1].offsetTop+'px'
+            }
+            
+        }
+        function snakeDirection(){//控制蛇的方向
+            var flag1=true;
+            var flag2=true;
+            document.addEventListener('keydown',function(e){
+                switch(e.keyCode){
+                    case 37:
+                        if(flag1){
+                            sheObj.direction=37
+                            flag2=true;
+                            flag1=false;
+                        }
+                         break;
+                    case 38:
+                        if(flag2){
+                            sheObj.direction=38
+                                flag2=false;
+                                flag1=true;
+                        }
+                        break;
+                    case 39:
+                        if(flag1){
+                            sheObj.direction=39
+                            flag2=true;
+                            flag1=false;
+                        }
+                        break;
+                    case 40:
+                        if(flag2){
+                                sheObj.direction=40
+                                    flag2=false;
+                                    flag1=true;
+                            }
+                        break;
+                }
+            },false)
+        }
+
+        function apples(){//创建苹果
+            appleRandom()
+            appleData.apple = document.createElement('div');
+            var x=Math.floor(Math.random()*boxData.row),
+                y=Math.floor(Math.random()*boxData.col);
+            appleData.apple.classList.add('apple');
+            appleData.apple.style.width=appleData.apple.style.height=appleData.size+'px';
+            appleData.apple.style.top=y*(boxData.size+1)+1+'px';
+            appleData.apple.style.left=x*(boxData.size+1)+'px';
+            boxData.box.appendChild(appleData.apple)
+        }
+        function pz(box1,box2){//碰撞检查
+            var L1 = box1.offsetLeft,
+                R1 = box1.offsetLeft+box1.offsetWidth,
+                T1 = box1.offsetTop,
+                B1 = box1.offsetTop+box1.offsetHeight,
+                L2 = box2.offsetLeft,
+                R2 = box2.offsetLeft+box2.offsetWidth,
+                T2 = box2.offsetTop,
+                B2 = box2.offsetTop+box2.offsetHeight;
+                if(L1<R2&&R1>L2&&T1<B2&&B1>T2){
+                    return true;
+                }else{
+       
+                    return false;
+                }
+        }
+        function appleRandom(){
+           var len=sheObj.snkeMian.length
+            for(var i=4;i<len;i++){
+                var clas=boxData.lis[i].getAttribute('class')
+                if(pz(sheObj.snkeMian[0],sheObj.snkeMian[i])){
+                    console.log('true')
+                    return true;
+                }
+            }
+        }
+        function gameOver(she){//判断游戏结束
+            if(she.offsetLeft<0 ||she.offsetTop<0||she.offsetLeft>boxData.box.offsetWidth-boxData.size||she.offsetTop>boxData.box.offsetHeight-boxData.size){
+                return true;
+            }else{
+                return false;
+            }
+        }
+      
+
+        init()
+    }())
+
+
+
+</script>

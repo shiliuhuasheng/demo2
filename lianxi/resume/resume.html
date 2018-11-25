@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+   
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+        #warper{
+            width:1200px;
+            margin: 0 auto;
+        }
+       
+        body{
+            font-size: .12rem;
+            background: #dddddd;
+            font-family:Arial;
+            /* Helvetica; */
+        }
+        
+       
+        .header{
+            width: 100%;
+            height: 1.7rem;
+            border-bottom:5px solid #dddddd; 
+            background:white;
+            display: flex;
+        }
+        .head-name{
+            padding:.15rem .30rem;
+            width: 80%;
+        }
+        .head-name h3{
+            line-height: .5rem;
+            text-indent: 1.5rem;
+        }
+        .head-name div{
+            line-height: .35rem;
+        }
+        .info{
+            display: flex;
+            margin-left:1rem;
+        }
+        .major{
+            margin-left: 1.2rem;
+        }
+        .info div{
+            margin-right:.9rem;
+        }
+        .head-img{
+            height: 100%;
+            width: 20%;
+            
+
+        }
+        .head-img img{
+            width: 3rem;
+            height:100%;
+           
+        }
+        #mian{
+            width: 100%;
+            background:white;
+            padding:.05rem;
+            box-sizing: border-box;
+        }
+        .com-head{
+            width: 100%;
+            height: .3rem;
+            line-height: .3rem;
+            position: relative;
+
+        }
+        .com-head::after{
+            content: "";
+            width: 100%;
+            height: 2px;
+            margin-top:-1px; 
+            background: #3bbfb4;
+            position: absolute;
+            top:50%;
+            left:0;
+
+        }
+        .com-head .bg-text{
+            width: .8rem;
+            height: 100%;
+            background:#3bbfb4;
+            text-align: center;
+            position: relative;
+            z-index:5;
+            color: white;
+        }
+        .com-head .bg-text:after{
+            content: "";
+            position: absolute;
+            top:0;
+            right:-.18rem;
+            border-left:.18rem solid #3bbfb4;
+            border-top:.15rem solid transparent;
+            border-bottom:.15rem solid transparent;
+        }
+        .skills{
+            font-size: .14rem;
+            line-height: .3rem;
+            padding-left:.8rem;
+            box-sizing: border-box;
+            word-break: break-all 
+        }
+      
+        
+    </style>
+    <link rel="stylesheet" type="text/css" media="screen and (max-width:750px)" href="phoneResume.css" >
+</head>
+<body>
+    <div id="warper">
+        <div class="header">
+                
+            <div class="head-name">
+                    <h3>周武</h3>
+                <div class="info">
+                    <div>求职意向:WEB前端 <br />  邮箱地址：451912640@qq.com  </div>
+                    <div class="tex">
+                        <span>年龄:24</span> <span class="major">专业：报关与国际货运</span><br/>
+                        <span>电话:13869023595</span>
+                    </div>
+                </div>
+            </div>
+            <div class="head-img">
+                <img src="" alt="">
+            </div>
+
+        </div>
+        <div id="mian">
+            <div class="com-head">
+                <div class="bg-text">职业技能</div>
+            </div>
+            <div class="skills">
+                1.掌握HTML、CSS、JS,掌握H5、CSS3，灵活使用常见标签，擅长语义化开发,熟悉浏览器的部分兼容问题。<br/>
+                2.掌握es6，熟悉let、const、类和对象、结构赋值等，会使用Async function。<br/>
+                3.掌握jQuery，读过核心源码部分，了解其思想。<br/>
+                4.熟悉异步流程，熟悉模块化，了解commonJS AMD CMD   <br/>
+                5.熟悉前端性能优化，掌握基于缓存、加载相关的性能优化，了解前端安全。<br/>
+                6.熟悉微信小程序开发。<br/>
+                7.框架方面，熟悉vue的基本使用，会搭建vue的开发环境，了解ng，目前正在学习ng，会使用常用UI框架。<br/>
+                8.后端方面，熟悉node的流、网络、文件等，会用node写接口并用ajax请求数据，会使用mongoDB。<br/>
+                9.协作方面，会使用git、svn ，有良好的人际沟通能力。
+            </div>
+            <div class="com-head">
+                    <div class="bg-text">项目经验</div>
+            </div>
+               
+            <div class="experience skills">
+                一.丝芙兰官网<br>
+                通过抓取的图片资源数据接口，实现数据加载，页面跳转，用户登录，加入购物车，使用flex布局，css3、canvas实现页面效果，使用ajax实现动态数据加载使用localStorage做本地储存,使用了构造函数的写法精简代码做性能优化。<br/>
+               <p> 项目地址:https://shiliuhuasheng.github.io/zhouwu/%E4%B8%9D%E8%8A%99%E5%85%B0%E7%BD%91%E7%AB%99/html/home-page.html<br/>
+                </p>
+                二.微信小程序音乐播放器<br/>
+                通过抓取qq音乐后台接口实现音乐播放、歌曲搜索、歌曲展示、歌曲详情的类似qq音乐的功能.<br/>
+                三.nodejs、mongoDB、模拟购物系统<br/>
+                自己封装mongoDB的增删该查功能，搭建express框架，配置router模块，自己写后台接口，通过session储存临时数据，ajax页面数据加载，模拟购物平台进行交易，操作数据库。<br/>
+                四.平时练习demo<br/>
+                  贪吃蛇 、 别踩黑白快 、 推箱子 、 扫雷 、 canvas实现曲线运动及炫酷效果、、、 
+                   
+            </div>
+            <div class="com-head">
+                    <div class="bg-text">自我评价</div>
+            </div>
+            <div class="educational skills">
+                对编程充满热爱，平时主要从github、网络公开课和一些大牛的博客上获取知识，当过兵，能吃苦，善于表达自己和听取别人的看法，喜欢看一些技术相关的文章，喜欢专研别人不知道的技术，希望可以进入公司多与大神交流。<br/>
+                另外目前在学习ng和webpack，如邀面前请用邮件或者短信通知,非常感谢！
+            </div>
+            <div class="self-assessment"></div>
+        </div>
+    </div>
+</body>
+
+
+    <script>
+        (function(doc,win){ 
+            var docEl =doc.documentElement,  
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',  
+                recalc = function(){  
+                    var clientWidth = docEl.clientWidth>1242 ? 1242 :docEl.clientWidth;  
+                    if (!clientWidth) {return};  
+                    docEl.style.fontSize = 100 * (clientWidth/1242) + 'px';  
+                };  
+            recalc();  
+            if (!doc.addEventListener) return;  
+            win.addEventListener(resizeEvt, recalc, false);  
+            
+            doc.addEventListener('DOMContentLoaded', recalc, false); 
+            
+        })(document,window)
+
+    
+    
+    </script>
+</html>

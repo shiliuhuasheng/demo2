@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      
+        .nav div{
+            width:100px;
+            height: 40px;
+            border: 1px solid red;
+            float: left;
+        }
+        .box{
+            width: 300px;
+            /* height: 300px;
+            border:1px solid black; */
+        }
+       
+        .boxs>div{
+            display:none;
+        }
+        input{
+            display: none;
+        }
+        #inp1:checked~ .boxs .itme1{
+            display: block;
+        } 
+        #inp2:checked~ .boxs .itme2{
+            display: block;
+        } 
+        #inp3:checked~ .boxs .itme3{
+            display: block;
+        } 
+    </style>
+</head>
+<body>
+    <div id="warper">
+        
+        <div class="nav">
+            <label for="inp1"><div class="list1">新闻</div></label>
+            <label for="inp2"><div class="list2">新闻</div></label>    
+            <label for="inp3"><div class="list3">新闻</div></label>   
+        </div>
+        <input type="radio" name="inp1" id="inp1" checked>
+        <input type="radio" name="inp1" id="inp2">
+        <input type="radio" name="inp1" id="inp3">
+
+        <div class="boxs">
+        <div class="itme1 box"> <img src="img/banner1.png" alt=""></div>
+        <div class="itme2 box"><img src="img/banner2.png" alt=""></div>
+        <div class="itme3 box"><img src="img/banner3.png" alt=""></div>
+        </div>
+ 
+
+
+
+
+    </div>
+</body>
+</html>

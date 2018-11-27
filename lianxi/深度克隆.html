@@ -10,7 +10,16 @@
     
 </body>
     <script>
+//         js一般有两种不同数据类型的值：
+// 基本类型（包括undefined,Null,boolean,String,Number），按值传递；
+// 引用类型（包括数组，对象），按址传递，引用类型在值传递的时候是内存中的地址。例如：
+// 如果你修改b的值，那么a变量的值也发生了变化。
+// 克隆或者拷贝分为2种：浅度克隆（拷贝），深度克隆（拷贝）；
+// 浅度克隆：基本类型为值传递，对象仍为引用传递。
+// 深度克隆：所有元素或属性均完全克隆，并于原引用类型完全独立，即，在后面修改对象的属性的时候，原对象不会被修改。
         // 深度克隆
+        // origin--被克隆的对象
+        // target--返回的新对象 
         function clone(origin,target){
             var target = target || {},
                 toStr = Object.prototype.toString,
@@ -32,5 +41,16 @@
             return target
         }
     
+        var obj = {
+            name:"zhang"
+        }
+        var a = obj;
+       
+        
+       
+console.log(a)
+console.log(obj)
+
+
     </script>
 </html>

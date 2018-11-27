@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    AngularJS 指令是扩展的 HTML 属性，带有前缀 ng-。
+    ng-app 指令初始化一个 AngularJS 应用程序。
+    ng-init 指令初始化应用程序数据。
+    ng-controller 指令用于为你的应用添加控制器。
+        在控制器中，你可以编写代码，制作函数和变量，并使用 scope 对象来访问。
+    ng-model 数据双向绑定 指令把元素值（比如输入域的值）绑定到应用程序。
+    ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error):
+                                        {{myForm.myAddress.$valid}} 返回false  和true
+                                        {{myForm.myAddress.$dirty}} 返回false  和true
+                                        {{myForm.myAddress.$touched}} 返回false  和true
+
+
+    ng-repeat 指令   <li ng-repeat="x in names">{{x}}</li>
+    ng-repeat 指令对于集合中（数组中）的每个项会 克隆一次 HTML 元素。
+    Scope 是一个对象，有可用的方法和属性。
+    Scope 可应用在视图和控制器上
+    scope 是一个 JavaScript 对象，带有属性和方法，这些属性和方法可以在视图和控制器中使用。
+                        <div ng-app="myApp" ng-controller="myCtrl">
+                            <input ng-model="name">
+                            <h1>{{greeting}}</h1>
+                            <button ng-click='sayHello()'>点我</button>    
+                        </div>
+                         
+                        <script>
+                        var app = angular.module('myApp', []);
+                        app.controller('myCtrl', function($scope) {
+                            $scope.name = "Runoob";
+                            $scope.sayHello = function() {
+                                $scope.greeting = 'Hello ' + $scope.name + '!';
+                            };
+                        });
+                        </script>
+
+
+</body>
+</html>

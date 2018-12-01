@@ -165,7 +165,8 @@
 			ctx.rotate(deg)旋转(累加)
 			ctx.save()保存状态
 			ctx.restore()恢复状态
-			
+			在图形重叠的地方，颜色由两种颜色值的加值来决定。   颜色叠加提高亮度
+			ctx.globalCompositeOperation="lighter"
 			
 		<svg>绘图
 				宽    		高					填充		填充透明度			描边			描边宽度			描边透明度

@@ -616,9 +616,10 @@ str.      match(正则表达式)--找到一个或者多个正则表达式的匹�
 		prototype--函数才有的数据
 		__proto__    原型链是每个对象都有的属性		
 		原型指向上一层对象的原型   最终指向unll
-
 		
-			
+		requestAnimationFrame（fn）requestAnimationFrame的用法与settimeout很相似，只是不需要设置时间间隔而已。requestAnimationFrame使用一个回调函数作为参数，这个回调函数会在浏览器重绘之前调用。它返回一个整数，表示定时器的编号，这个值可以传递给cancelAnimationFrame用于取消这个函数的执行
+		requestID = requestAnimationFrame(callback); 
+		cancelAnimationFrame方法用于取消定时器	cancelAnimationFrame(1或者timer);
 		
 		
 			</body>

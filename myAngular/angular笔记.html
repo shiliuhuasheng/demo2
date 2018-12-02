@@ -1,0 +1,50 @@
+anguler笔记
+
+指令：
+一、结构型指令：
+*ngFor
+*ngIf
+*ngSwitchCase
+*ngSwitchDefault
+二、属性型指令
+事件绑定（eventName）="handclick()"
+属性绑定  img[src]= "myurl"
+双向数据绑定 [(ngModel)]="myvalue"属于表达formModule模块 需引入FormModule模块import{FormModule} from '@anguler/froms'
+ngStyle/ngClass  <h1 [ngStyle]="{color:mycolor}"></h1>
+
+
+
+三、自定义指令
+1.首先创建一个test.directive.ts文件 //a-directive  快速生产页面   自定义组件页面
+2. import { Directive , ElementRef  , OnInit} from '@angular/core';
+//找到调用该指令的元素需要引入ElementRef
+//引入Oninit
+3.实例化 constructor(private  el:ElementRef )
+4.//通过el.nativeElement方法找到调用指令的元素来设置他的style属性
+//  this.el.nativeElement.style.visibility = "hidden"
+ this.el.nativeElement.style.color = "red"
+
+
+四、路由词典配置
+1.创建app.routing.ts 文件 a-module-root快速生成
+2.import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+3.配置路由词典 const routes: Routes = [ ] 
+4.//将修改forChild改为forRoot
+    imports: [RouterModule.forRoot (routes)],
+    exports: [CommonModule,RouterModule],
+5.修改导出的类名 export class AppRoutingModule { }
+
+五，路由跳转及传参
+routerLink="/demo01"  [routerLink]="{'/demo01',{id:10}}"
+navigate(['/demo01',{id:10}])
+navigateByUrl('/demo04/'+this.userInput)
+六、接收参数
+import { ActivatedRoute } from '@angular/router';//接收demo03传过来的参数需要引入的模块
+{path:'pay/:price',component:PayComponent},
+通过params.subscribe((result:any)方法来接收参数
+this.myRouter.params.subscribe((result:any)=>{
+    // result--就是我门需要的数据 指定any是类型   任意类型
+    console.log(result)
+    this.rcvMsg = result.uName
+})

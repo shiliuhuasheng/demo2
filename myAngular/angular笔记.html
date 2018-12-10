@@ -2,11 +2,20 @@ anguler笔记
 
 指令：
 一、结构型指令：
-*ngFor
-*ngIf
+*ngFor 和 ngIf嵌套需要用<ng-container></ng-container>包着否则会报错
+<ng-container *ngFor="let item of list;let i = index"></ng-container>  下标为i
+<ng-container *ngFor="let item of list index as i"></ng-container>下标为i
+<ng-container *ngFor="let item of lists">
+    <div class="thumb p-date" *ngIf="item.picurl">
+    <a href="# "><img src="{{item.picurl}} " alt=" " style="width:79px;height: 70px; "></a>
+    </div>
+    </ng-container>
+  
+*ngIf   需要引入的模块  import {CommonModule} from '@angular/common'
 *ngSwitchCase
 *ngSwitchDefault
 二、属性型指令
+[(ngModel)]="name"   需要引入 import {FormsModule} from '@angular/forms'
 事件绑定（eventName）="handclick()"
 属性绑定  img[src]= "myurl"
 双向数据绑定 [(ngModel)]="myvalue"属于表达formModule模块 需引入FormModule模块import{FormModule} from '@anguler/froms'
